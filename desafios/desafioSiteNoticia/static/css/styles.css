@@ -1,0 +1,82 @@
+header {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-left:15px;
+}
+
+main {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin:0 15px;
+}
+
+.v0 {
+    border-top: 3px solid #efeff5;
+    width: 90%;
+    margin-bottom: 0;
+}
+
+svg {
+    height: 20px;
+    width: 200px;
+}
+
+rect {
+    fill: #e20303;
+    height: 10px;
+    width: 200px;
+}
+
+
+
+section {
+    width: 48%;
+}
+
+.headline__img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.vl {
+    border-left: 3px solid #efeff5;
+    height: 600px;
+}
+
+.sublines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 5px;
+}
+
+h4 {
+    color:#e20303;
+    font-size: 20px;
+}
+
+.piece {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.subline__img {
+    float: left;
+    margin-right: 10px;
+    max-height: 120%;
+    max-width: 25%;
+
+}
