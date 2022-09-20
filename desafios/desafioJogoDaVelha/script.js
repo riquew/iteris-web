@@ -41,16 +41,13 @@ function recebeClique(event) {
     let userY = event.pageY;
     let linha = verificaLinha(userY);
     let coluna = verificaColuna(userX)
-    console.log(userX, userY)
     let coordenadas = {
         linha: linha,
         coluna: coluna,
     }
     desenhaJogada(coordenadas);
     countClick ++;
-    (countClick > 4) ? checaVencedor() : 
-    console.log(countClick);
-    console.log(jogadasEfetuadas);
+    (countClick > 4) ? checaVencedor() : '';
 }
 
 function verificaLinha(userY){
@@ -116,31 +113,25 @@ function registraCirculo(x, y, posicao) {
     pincel.beginPath();
     pincel.arc(x + 60, y - 60, 60, 0, 2 * Math.PI);
     pincel.stroke();
+
     jogadasEfetuadas[posicao] = "O";
 }
 
 function checaVencedor() {
-    console.log('checando...')
     // linhas horizontais:
     if(jogadasEfetuadas[0] === jogadasEfetuadas[1] && jogadasEfetuadas[1] === jogadasEfetuadas[2]) {
-        console.log('linha1')
         desenhaRiscoVitoria(100, 120, "h");
     } else if(jogadasEfetuadas[3] === jogadasEfetuadas[4] && jogadasEfetuadas[4] === jogadasEfetuadas[5]) {
-        console.log('linha2')
         desenhaRiscoVitoria(100, 300, "h");
     } else if(jogadasEfetuadas[6] === jogadasEfetuadas[7] && jogadasEfetuadas[7] === jogadasEfetuadas[8]) {
-        console.log('linha3')
         desenhaRiscoVitoria(100, 480, "h");
 
     // linhas verticais:
     } else if(jogadasEfetuadas[0] === jogadasEfetuadas[3] && jogadasEfetuadas[3] === jogadasEfetuadas[6]) {
-        console.log('coluna1')
         desenhaRiscoVitoria(190, 30, "v");
     } else if(jogadasEfetuadas[1] === jogadasEfetuadas[4] && jogadasEfetuadas[4] === jogadasEfetuadas[7]) {
-        console.log('coluna2')
         desenhaRiscoVitoria(400, 30, "v");
     } else if(jogadasEfetuadas[2] === jogadasEfetuadas[5] && jogadasEfetuadas[5] === jogadasEfetuadas[8]) {
-        console.log('coluna3')
         desenhaRiscoVitoria(610, 30, "v");
     // diagonais: 
     } else if(jogadasEfetuadas[0] === jogadasEfetuadas[4] && jogadasEfetuadas[4] === jogadasEfetuadas[8]) {
@@ -151,7 +142,6 @@ function checaVencedor() {
 }
 
 function desenhaRiscoVitoria(x, y, sentido) {
-    console.log("X: " + x + "Y: " + y)
     pincel.lineWidth = 15;
     pincel.strokeStyle = "#8b0000";
 
