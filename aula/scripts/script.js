@@ -1,11 +1,16 @@
+const getData = () => 
+  fetch('http://localhost:3000/submissoes')
+    .then(response => response.json())
+    .catch(err => console.error(err));
+
 function isLoaded() {
-    updateYear();
+    const textFooter = document.querySelector(".footer p");
+    if(textFooter) updateYear(textFooter);
     const formSubmit = document.querySelector("form");
-    formSubmit.addEventListener("submit", formHandle);
+    if(formSubmit) formSubmit.addEventListener("submit", formHandle);
 }
 
-function updateYear() {
-    const textFooter = document.querySelector(".footer p");
+function updateYear(textFooter) {
     let yearNow = new Date().getFullYear();
     textFooter.textContent += ` - ${yearNow}`
 }
