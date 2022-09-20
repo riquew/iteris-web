@@ -5,11 +5,6 @@ body {
     position: relative;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-}
-
 .header,.footer {
     background-color: #F58220;
     color: #fff;
