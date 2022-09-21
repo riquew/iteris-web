@@ -1,0 +1,19 @@
+{
+  "submissoes": [
+    {
+      "id": 1,
+      "nome": "Equipe ITC",
+      "tipo": 1
+    },
+    {
+      "nome": "HENRIQUE DE ROSSI WINDLIN",
+      "tipo": "1",
+      "id": 2
+    },
+    {
+      "nome": "Celular",
+      "tipo": "3",
+      "id": 3
+    }
+  ]
+}
