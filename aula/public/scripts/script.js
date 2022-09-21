@@ -23,41 +23,41 @@ const addSubmits = async(ulEl) => {
       }
     };
     
-    function updateYear(textFooter) {
-        let yearNow = new Date().getFullYear();
-        textFooter.textContent += ` - ${yearNow}`
+function updateYear(textFooter) {
+    let yearNow = new Date().getFullYear();
+    textFooter.textContent += ` - ${yearNow}`
     }
     
-    function formHandle(event) {
-        event.preventDefault();
-        const ulEl = document.querySelector('.main ul');
-        if(ulEl) {
-            let data = {
-                nome : event.target.nome.value,
-                tipo : event.target.tipo.value,
-            };
-            postData(data).then((novaSubmissao)=> {
-                addListItem(data, ulEl);
-            })
-            console.log(data);
-            event.target.nome.value = '';
-            event.target.tipo.value = '';
+function formHandle(event) {
+    event.preventDefault();
+    const ulEl = document.querySelector('.main ul');
+    if(ulEl) {
+        let data = {
+            nome : event.target.nome.value,
+            tipo : event.target.tipo.value,
+        };
+        postData(data).then((novaSubmissao)=> {
+            addListItem(data, ulEl);
+        })
+        console.log(data);
+        event.target.nome.value = '';
+        event.target.tipo.value = '';
         }
     }
 
-    function addListItem(data, ulEl) {
-        const liEl = document.createElement("li");
-        liEl.innerText = `${data.nome} - Tipo: ${data.tipo}`;
-        ulEl.appendChild(liEl);
+function addListItem(data, ulEl) {
+    const liEl = document.createElement("li");
+    liEl.innerText = `${data.nome} - Tipo: ${data.tipo}`;
+    ulEl.appendChild(liEl);
     }
     
-    function isLoaded() {
-        const textFooter = document.querySelector(".footer p");
-        if(textFooter) updateYear(textFooter);
-        const formSubmit = document.querySelector("form");
-        if(formSubmit) formSubmit.addEventListener("submit", formHandle);
-        const ulEl = document.querySelector(".submits ul");
-        if(ulEl) addSubmits(ulEl);
+function isLoaded() {
+    const textFooter = document.querySelector(".footer p");
+    if(textFooter) updateYear(textFooter);
+    const formSubmit = document.querySelector("form");
+    if(formSubmit) formSubmit.addEventListener("submit", formHandle);
+    const ulEl = document.querySelector(".submits ul");
+    if(ulEl) addSubmits(ulEl);
     }
 
 document.addEventListener("DOMContentLoaded", isLoaded);
