@@ -1,6 +1,7 @@
 .blogPost {
     display: flex;
     justify-content: center;
+    font-family: Helvetica;
     flex-direction: column;
 }
 
@@ -21,5 +22,4 @@ article.blogPost img {
 
 article.blogPost p {
     font-size: 16px;
-    font-family: Helvetica;
 }
