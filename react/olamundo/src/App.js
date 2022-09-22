@@ -1,5 +1,6 @@
 import BlogPost from "./components/BlogPost";
 import BlogPostModel from "./models/BlogPostModel";
+import ButtonCompartilha from "./components/ButtonCompartilha";
 
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
   return (
     <div className="exemploDeClassesCss">
         <BlogPost post={blogModel}/>
+        <div className="buttonContainer">
+          <ButtonCompartilha />
+        </div>
     </div>
   );
 }

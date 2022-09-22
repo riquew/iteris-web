@@ -1,3 +1,9 @@
+.blogPost {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 article.blogPost h2 {
     padding-bottom: 5px;
     border-bottom: 1px solid rgba(104, 102, 102, 0.4);
