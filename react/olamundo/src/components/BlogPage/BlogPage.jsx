@@ -1,4 +1,5 @@
 import React from "react";
+import { useState} from "react";
 import BlogPostModel from "../../models/BlogPostModel";
 import BlogPost from "../BlogPost";
 import "./BlogPage.css"
@@ -6,6 +7,7 @@ import "./BlogPage.css"
 
 function BlogPage() {
   let listaDePostagens = [];
+  const [lista, setLista] = useState(listaDePostagens);
   listaDePostagens.push(
   new BlogPostModel(
     "Primeira postagem!",
@@ -26,17 +28,28 @@ function BlogPage() {
 
   function handleForm(event) {
     event.preventDefault();
-    console.log(event.target.titulo.value);
+    let novaLista = 
+    lista.concat(
+      new BlogPostModel(
+        event.target.titulo.value,
+        event.target.link.value,
+        event.target.conteudo.value
+      )
+    )
+    setLista(novaLista);
+    event.target.titulo.value ="";
+    event.target.link.value = "";
+    event.target.conteudo.value = ""
   }
 
   return (
   <>
     <div className="listaPostagens">
-      {listaDePostagens.map((item, i) => (
+      {lista.map((item, i) => (
         <BlogPost key={i} post={item} />
       ))}
     </div>
-    <form action="POST" class="formNovoPost">
+    <form action="POST" class="formNovoPost" onSubmit={handleForm}>
         <label for="titulo">Titulo do Post: </label>
         <input type="text" name="titulo"/>
         <label for="link">Link da imagem: </label>
@@ -44,7 +57,7 @@ function BlogPage() {
         <label for="conteudo">Conteudo do Post: </label>
         <textarea rows="10" columns="10" placeholder="Insira seu texto aqui" name="conteudo"></textarea>
         <div class="buttonContainer">
-          <input type="submit" value="Enviar" class="botaoCompartilha" onClick={handleForm}/>
+          <input type="submit" value="Enviar" class="botaoCompartilha"/>
         </div>
     </form>
     </> 
