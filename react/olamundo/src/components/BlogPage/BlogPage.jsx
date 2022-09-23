@@ -26,7 +26,7 @@ function BlogPage() {
 
   function handleForm(event) {
     event.preventDefault();
-    console.log(event)
+    console.log(event.target.titulo.value);
   }
 
   return (
