@@ -3,6 +3,7 @@ import { useState} from "react";
 import BlogPostModel from "../../models/BlogPostModel";
 import BlogPost from "../BlogPost";
 import "./BlogPage.css"
+import "../ButtonCompartilha/ButtonCompartilha.css"
 
 
 function BlogPage() {
